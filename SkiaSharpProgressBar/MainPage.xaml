@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SkiaSharpProgressBar.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:skiasharpprogressbar="clr-namespace:SkiaSharpProgressBar"
+    mc:Ignorable="d">
+
+    <StackLayout VerticalOptions="Center">
+
+        <Slider
+            x:Name="slider"
+            Maximum="1"
+            Minimum="0" />
+
+        <skiasharpprogressbar:ProgressBarView
+            AlternativeTextColor="Blue"
+            BarBackgroundColor="LightGray"
+            CornerRadius="1"
+            FontSize="14"
+            GradientEndColor="PaleGreen"
+            GradientStartColor="Green"
+            HeightRequest="50"
+            Percentage="{Binding Source={x:Reference slider}, Path=Value}"
+            TextColor="White" />
+    </StackLayout>
+</ContentPage>
